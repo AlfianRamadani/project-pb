@@ -1,7 +1,7 @@
 <footer class=" min-h-96 px-[12rem]  bg-zinc-800 py-8 text-white">
 
-    <div class="flex justify-between">
-        <div class="flex flex-col  gap-4 ">
+    <div class="flex justify-between gap-8">
+        <div class="flex flex-col gap-4 ">
             <h1 class="text-3xl text-semibold ">Pengumuman</h1>
             <div class="divide-y divide-dashed ">
                 <article class="py-5">
@@ -39,6 +39,6 @@
         </div>
     </div>
 </footer>
-<div class="bg-red-800 flex justify-center items-center font-semibold text-white py-5 min-h-28">
+<div class="flex items-center justify-center py-5 font-semibold text-white bg-red-800 min-h-28">
     Tim Padmanaba News (Padnews)
 </div>

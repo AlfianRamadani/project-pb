@@ -1,3 +1,4 @@
-<div>
-    <!-- Be present above all else. - Naval Ravikant -->
-</div>
+<x-layout>
+<x-social-media-side></x-social-media-side>         
+<x-profilSide></x-profilSide>
+</x-layout>

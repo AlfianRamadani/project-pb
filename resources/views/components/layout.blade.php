@@ -3,11 +3,11 @@
 <head>
     <x-seo></x-seo>
 </head>
-<body>
+<body class="min-h-screen">
     <header>
         <x-navbar></x-navbar>
     </header>
-    <main>
+    <main class="min-h-44">
         {{$slot}}
     </main>
 
