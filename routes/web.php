@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 // Home
@@ -62,9 +64,7 @@ Route::get('/galeri', function () {
     return view('galeri');
 })->name('galeri');
 
-Route::get('/news', function () {
-    return view('news');
-})->name('news');
+Route::get('/news', NewsController::class)->name('news');
 
 Route::get('/ppdb', function () {
     return view('ppdb');

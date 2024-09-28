@@ -7,7 +7,7 @@
     <header>
         <x-navbar></x-navbar>
     </header>
-    <main class="min-h-44 max-w-[85rem]  mx-auto">
+    <main class="min-h-44 max-w-[85rem]  mx-auto py-20  ">
         {{$slot}}
     </main>
 

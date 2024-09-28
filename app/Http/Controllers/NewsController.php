@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\news;
 use App\Http\Requests\StorenewsRequest;
 use App\Http\Requests\UpdatenewsRequest;
+use App\Models\Post;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
+
+    public function __invoke()
+    {
+        Carbon::setLocale('id');
+        $data = Post::first();
+        return view('news')
+        ->with(compact('data'));
+    }
     /**
      * Display a listing of the resource.
      */
