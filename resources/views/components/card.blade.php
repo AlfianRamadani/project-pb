@@ -1,16 +1,19 @@
-<div class="relative bg-whiteshadow-sm rounded-sm dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-    <img class="w-full h-full rounded-sm" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Card Image">
-    <div class="absolute top-0 start-0 end-0">
-      <div class="p-4 md:p-5">
-        <h3 class="text-lg font-bold text-gray-800">
-          Card title
-        </h3>
-        <p class="mt-1 text-gray-800">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </p>
-        <p class="mt-5 text-xs text-gray-500 dark:text-neutral-500">
-          Last updated 5 mins ago
-        </p>
-      </div>
-    </div>
-  </div>
+@props(['post'])
+
+<div class="relative bg-white rounded-sm shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+    @if($post) {{-- Check if $post is not null before rendering --}}
+        <img class="w-full h-full rounded-sm" src="{{ $post->image_url }}" alt="Card Image">
+        <div class="absolute top-0 left-0 right-0">
+            <div class="p-4 md:p-5">
+                <h3 class="text-lg font-bold text-gray-800">{{ $post->title }}</h3> {{-- Display post title --}}
+                <p class="mt-1 text-gray-800">{{ $post->excerpt }}</p> {{-- Display a brief description or excerpt --}}
+                <p class="mt-5 text-xs text-gray-500 dark:text-neutral-500">
+                    Last updated {{ $post->updated_at->diffForHumans() }} {{-- Show last updated time --}}
+                </p>
+            </div>
+        </div>
+    @else
+        <div class="p-4 text-gray-500 md:p-5">No content available</div> {{-- Optional fallback for when $post is null --}}
+    @endif
+</div>
+    
