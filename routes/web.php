@@ -29,4 +29,10 @@ Route::prefix('unggulan')->group(function () {
 Route::get('/kontak', [ViewController::class, 'contact'])->name('contact');
 Route::get('/direktori/guru-dan-karyawan', [ViewController::class, 'directory'])->name('directory');
 Route::get('/berita', [ViewController::class, 'news'])->name('news');
+Route::get('/berita/{slug}', [ViewController::class, 'post'])->name('post');
 Route::get('/ppdb', [ViewController::class, 'ppdb'])->name('ppdb');
+Route::get('/kegiatan', [ViewController::class, 'kegiatan'])->name('Kegiatan');
+Route::get('/pengumuman', [ViewController::class, 'pengumuman'])->name('Pengumuman');
+Route::get('/fasilitas', [ViewController::class, 'fasilitas'])->name('Fasilitas');
+Route::get('/blog', [ViewController::class, 'blog'])->name('Blog Guru');
+Route::get('/{category}/{slug}', [ViewController::class, 'show'])->name('post.show');

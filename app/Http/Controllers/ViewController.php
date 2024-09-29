@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
 {
-    public function welcome() {
-        $mainPost = Post::orderBy('created_at', 'desc')->take(3)->get();
-        return view('welcome')
-        ->with(compact('mainPost'));
-    }
+        public function welcome() {
+            Carbon::setLocale('id');
+            $mainPost = Post::with('categories')->orderBy('created_at', 'desc')->take(3)->get();
+            $categories = Category::with('posts')->whereIn('category_name', ['Pengumuman', 'Blog Guru', 'Fasilitas', 'Kegiatan'])->get();
+
+            return view('welcome')
+            ->with(compact('mainPost', 'categories'));
+        }
 
     public function gallery() {
         return view('gallery');
@@ -62,7 +67,14 @@ class ViewController extends Controller
     }
 
     public function news() {
-        return view('news'); // Ensure this method is added for consistency.
+        $data = Post::first();
+        return view('berita')
+        ->with(compact('data'));
+    }
+    public function post(string $slug){
+        $post = Post::where('slug', $slug)->first();
+        return view('post')
+        ->with(compact('post'));
     }
 
     public function ppdb() {
