@@ -71,8 +71,9 @@ class ViewController extends Controller
         return view('berita')
         ->with(compact('data'));
     }
-    public function post(string $slug){
+    public function post(string $category, string $slug){
         $post = Post::where('slug', $slug)->first();
+        
         return view('post')
         ->with(compact('post'));
     }
@@ -80,4 +81,9 @@ class ViewController extends Controller
     public function ppdb() {
         return view('ppdb');
     }
+    // public function show(string $category, string $slug){
+    //     $category = ucwords(str_replace('-', ' ', $category));
+    //     Post::where('slug', $slug)
+
+    // }
 }

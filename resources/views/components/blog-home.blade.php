@@ -23,12 +23,12 @@
             <div class="flex flex-col gap-4 px-5 py-5 overflow-hidden bg-stone-100 max-h-[30rem] h-96">
 
 
-                <x-card-second :post='$category["posts"][1]'></x-card-second>
-                <x-card-second :post='$category["posts"][1]'></x-card-second>
-                <x-card-second :post='$category["posts"][1]'></x-card-second>
+                <x-card-second :custom="1" :post='$category["posts"][1]'></x-card-second>
+                <x-card-second :custom="1" :post='$category["posts"][1]'></x-card-second>
+                <x-card-second :custom="1" :post='$category["posts"][1]'></x-card-second>
                 {{-- <x-card-second :post='$category["posts"][2]'></x-card-second> --}}
                 <div class="flex items-center justify-center h-10 mx-auto mt-auto text-center bg-red-800 w-28">
-                    <a class="text-white" href="#">Read More</a>
+                    <a class="text-white" href="{{ route('list.post', ['category' => Str::slug($category['category_name'])]) }}">Read More</a>
                 </div>
 
             </div>

@@ -1,12 +1,12 @@
 @props(['custom', 'post' ])
 @if($post) {{-- Check if $post is not null before rendering --}}
-    
-<a href="{{ $custom ? route($post->category_name, ['slug' => $post->slug]) : route('post', ['slug' => $post->slug]) }}" class="block">
+
+<a href="{{ $custom ? route('post.show', ['category' => Str::slug($post->category_name), 'slug' => $post->slug]) : route('post', ['slug' => $post->slug]) }}" class="block">
 
         <div class="relative bg-white rounded-sm shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div class="relative">
                 <img class="w-full h-full rounded-sm" src="{{ $post->image_url }}" alt="Card Image">
-
+                    
                 <!-- Overlay gradient for better text readability -->
                 <div class="absolute inset-0 rounded-sm bg-gradient-to-t from-black to-transparent opacity-60"></div>
 
