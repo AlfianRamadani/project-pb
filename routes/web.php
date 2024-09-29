@@ -35,5 +35,5 @@ Route::get('/kegiatan', [ViewController::class, 'kegiatan'])->name('Kegiatan');
 Route::get('/pengumuman', [ViewController::class, 'pengumuman'])->name('Pengumuman');
 Route::get('/fasilitas', [ViewController::class, 'fasilitas'])->name('Fasilitas');
 Route::get('/blog', [ViewController::class, 'blog'])->name('Blog Guru');
-Route::get('{category}/{slug}', [ViewController::class, 'post'])->name('post.show');
+Route::get('{category}/{slug}', [ViewController::class, 'postCategory'])->name('post.show');
 Route::get('{category}', [ViewController::class, 'list'])->name('list.post');
