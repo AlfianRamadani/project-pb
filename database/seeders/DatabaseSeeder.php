@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         // Menjalankan seeder CategorySeeder
         $this->call([
             CategorySeeder::class,
-            SocialMediaSeeder::class
+            SocialMediaSeeder::class,
+            PostCategorySeeder::class
 
         ]);
     }

@@ -13,6 +13,6 @@ class Category extends Model
     // Relasi ke post (many-to-many dengan pivot post_type)
     public function posts()
     {
-        return $this->belongsToMany(Post::class, 'post_type', 'category_id', 'post_id');
-    }   
+        return $this->belongsToMany(Post::class, 'post_category', 'category_id', 'post_id');
+    }
 }

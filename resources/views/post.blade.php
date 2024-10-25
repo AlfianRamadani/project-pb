@@ -7,13 +7,13 @@
                 <h1 class="mb-4 text-3xl font-bold">{{ $post['title'] }}</h1>
                 <p class="pb-2 mb-6 text-gray-600 border-b-[1px] border-black">{{
                     \Carbon\Carbon::parse($post->created_at)->translatedFormat('l, d F Y') }}</p>
-                <img src="{{ $post['image_url'] }}" alt="Image" class="w-full h-auto mb-4">
+                <img src="{{ asset(Storage::url($post['image_url'])) }}" alt="Image" class="w-full h-auto mb-4">
                 <!-- Konten Text -->
                 <p>{{ $post['content'] }}</p>
             </div>
             <div class="col-span-3">
 
-                <x-profilSide></x-profilSide>
+                <x-profil-side></x-profil-side>
             </div>
         </div>
 

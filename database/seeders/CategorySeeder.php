@@ -29,6 +29,7 @@ class CategorySeeder extends Seeder
             ['category_name' => 'Struktur Organisasi'],
             ['category_name' => 'Sejarah'],
             ['category_name' => 'Agenda'],
+            ['category_name' => 'Carousel'],
         ]);
     }
 }

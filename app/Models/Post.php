@@ -36,6 +36,6 @@ class Post extends Model
     // Relasi ke kategori jenis berita
     public function categories ()
     {
-        return $this->belongsToMany(Category::class, 'post_type', 'post_id', 'category_id');
+        return $this->belongsToMany(Category::class, 'post_category', 'post_id', 'category_id');
     }
 }

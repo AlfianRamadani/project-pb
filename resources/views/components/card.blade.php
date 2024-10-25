@@ -5,8 +5,8 @@
 
         <div class="relative bg-white rounded-sm shadow-sm dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div class="relative">
-                <img class="w-full h-full rounded-sm" src="{{ $post->image_url }}" alt="Card Image">
-                    
+                <img class="w-full h-full rounded-sm" src="{{ asset(Storage::url($post->image_url)) }}" alt="Card Image">
+
                 <!-- Overlay gradient for better text readability -->
                 <div class="absolute inset-0 rounded-sm bg-gradient-to-t from-black to-transparent opacity-60"></div>
 

@@ -20,9 +20,9 @@ class PostFactory extends Factory
         $slug = str::slug($title, '-');
         return [
             'title' => $title,
-            'image_url' => $this->faker->imageUrl(640, 480, 'education', true, 'school'),
-            'content' => $this->faker->paragraphs(3, true),
-            'slug' => $slug,
+            'image_url' => 'images/default.jpg',
+        'content' => $this->faker->paragraphs(3, true),
+        'slug' => $slug,
             'author' => $this->faker->name('man'),
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'created_at' => now(),
